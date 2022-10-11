@@ -1,6 +1,8 @@
 **Subject-verb-object triplets** finder for russian language with `stanza` library and own heuristics.
 
-Prerequisits:
+![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)
+
+Prerequisites:
 ```commandline
 pip install -r requirements
 python -c "import stanza; stanza.download('ru')"

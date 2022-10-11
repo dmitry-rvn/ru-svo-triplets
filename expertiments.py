@@ -1,12 +1,3 @@
-"""
-Subject-verb-object triplets finder for russian language.
-
-Prerequisites:
->>> import stanza; stanza.download('ru')
-
-Dependency relations (`deprel`) reference:
-    https://universaldependencies.org/u/dep/
-"""
 import stanza
 
 from svo.extractor import extract_svo
@@ -19,6 +10,7 @@ text = """
 Девушка искала ресторан и слушала музыку в наушниках.
 Сегодня мой друг решил сделать приятный подарок.
 Утром брат решил пойти выпить всё молоко.
+Я решил прекратить ходить выпивать пиво по выходным.
 """
 
 

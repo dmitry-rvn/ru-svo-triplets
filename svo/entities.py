@@ -12,7 +12,7 @@ class Phrase:
     advmod: Optional[Word] = None
 
     @property
-    def completed(self) -> bool:
+    def complete(self) -> bool:
         return all((self.nsubj, self.obj)) and len(self.verbs) > 0
 
     def add(self, dep_type: str, word: Word):

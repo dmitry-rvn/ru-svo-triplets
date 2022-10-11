@@ -1,3 +1,7 @@
+"""
+For dependency relations (`nsubj`, `obj`, etc.) reference see https://universaldependencies.org/u/dep/
+"""
+
 from collections import defaultdict
 
 import stanza
@@ -33,6 +37,7 @@ def extract_svo(doc: stanza.Document) -> list[Phrase]:
 
             elif dep_type == 'xcomp':
                 # "subj verb1 ... verbN objN" -> [(subj, verb1 + ... + verbN, objN)]
+                # TODO: fix
                 try:
                     initial_verb = _xcomp[(sent.index, verb.id)]
                 except:
@@ -45,5 +50,5 @@ def extract_svo(doc: stanza.Document) -> list[Phrase]:
                 except:
                     pass
 
-    svo_list = [x for x in svo.values() if x.completed]
+    svo_list = [x for x in svo.values() if x.complete]
     return svo_list
