@@ -1,4 +1,10 @@
-**Subject-verb-object triplets** finder for russian language with `stanza` library and own heuristics
+**Subject-verb-object triplets** finder for russian language with `stanza` library and own heuristics.
+
+Prerequisits:
+```commandline
+pip install -r requirements
+python -c "import stanza; stanza.download('ru')"
+```
 
 Example (see [experiments.py](expertiments.py)):
 ```python
@@ -13,7 +19,7 @@ text = """
 
 ...
 
-for phrase in get_svo(doc):
+for phrase in extract_svo(doc):
     print(str(phrase))
 ```
 Output:
