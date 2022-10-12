@@ -37,12 +37,12 @@ def extract_svo(doc: stanza.Document) -> list[Phrase]:
 
             elif dep_type == 'xcomp':
                 # "subj verb1 ... verbN objN" -> [(subj, verb1 + ... + verbN, objN)]
-                # TODO: fix
                 try:
                     initial_verb = _xcomp[(sent.index, verb.id)]
                 except:
                     initial_verb = verb
-                _xcomp[(sent.index, other.id)] = verb
+                    _xcomp[(sent.index, verb.id)] = verb
+                _xcomp[(sent.index, other.id)] = initial_verb
                 svo[(sent.index, initial_verb.id)].add('verb', other)
                 try:
                     other_obj = svo[(sent.index, other.id)].obj
