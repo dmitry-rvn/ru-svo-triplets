@@ -1,4 +1,0 @@
-stanza==1.4.2
-
-pytest
-jupyterlab
